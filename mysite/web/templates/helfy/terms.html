@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use | Helfy</title>
+    <style>
+        :root { --primary: #d63031; --text: #2d3436; --bg: #f9f9f9; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; padding: 40px 20px; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .lang-switch { text-align: right; margin-bottom: 20px; }
+        .btn-lang { background: var(--primary); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        h1, h2 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .content-en { display: none; }
+        .back-link { text-decoration: none; color: var(--primary); font-weight: bold; display: inline-block; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switch">
+            <button class="btn-lang" onclick="toggleLang()">Switch to English</button>
+        </div>
+        <a href="{% url 'index' %}" class="back-link">← Volver / Back</a>
+
+        <div id="es-content" class="content-es">
+            <h1>Términos y Condiciones</h1>
+            <p>Al acceder y utilizar la aplicación <strong>Helfy</strong>, usted acepta cumplir con los siguientes términos y condiciones de uso.</p>
+            
+            <h2>1. Propiedad Intelectual</h2>
+            <p>Helfy, incluyendo sus logotipos, mecánicas de juego, avatares y diseño de interfaz, es propiedad intelectual de sus desarrolladores. Se prohíbe la ingeniería inversa o redistribución de sus recursos sin autorización expresa.</p>
+
+            <h2>2. Uso Responsable</h2>
+            <p>La aplicación está diseñada como una herramienta de productividad. El usuario es el único responsable del contenido (nombres de tareas y notas) ingresado en la plataforma. Helfy no se hace responsable por el mal uso de la herramienta.</p>
+
+            <h2>3. Exclusión de Garantías</h2>
+            <p>Helfy se proporciona "tal cual" y "según disponibilidad". No garantizamos que el servicio sea ininterrumpido o libre de errores. No asumimos responsabilidad por la pérdida de datos derivada de fallos en el sistema operativo del usuario.</p>
+        </div>
+
+        <div id="en-content" class="content-en">
+            <h1>Terms and Conditions</h1>
+            <p>By accessing and using the <strong>Helfy</strong> application, you agree to comply with the following terms and conditions of use.</p>
+
+            <h2>1. Intellectual Property</h2>
+            <p>Helfy, including its logos, game mechanics, avatars, and interface design, is the intellectual property of its developers. Reverse engineering or redistribution of its assets without express authorization is prohibited.</p>
+
+            <h2>2. Responsible Use</h2>
+            <p>The application is designed as a productivity tool. The user is solely responsible for the content (task names and notes) entered into the platform. Helfy is not responsible for any misuse of the tool.</p>
+
+            <h2>3. Disclaimer of Warranties</h2>
+            <p>Helfy is provided "as is" and "as available." We do not guarantee that the service will be uninterrupted or error-free. We assume no responsibility for data loss resulting from failures in the user's operating system.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleLang() {
+            const es = document.getElementById('es-content');
+            const en = document.getElementById('en-content');
+            const btn = document.querySelector('.btn-lang');
+            if (es.style.display === "none") {
+                es.style.display = "block"; en.style.display = "none";
+                btn.innerText = "Switch to English";
+            } else {
+                es.style.display = "none"; en.style.display = "block";
+                btn.innerText = "Cambiar a Español";
+            }
+        }
+    </script>
+</body>
+</html>

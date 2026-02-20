@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Helfy</title>
+    <style>
+        :root { --primary: #6c5ce7; --text: #2d3436; --bg: #f9f9f9; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; padding: 40px 20px; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .lang-switch { text-align: right; margin-bottom: 20px; }
+        .btn-lang { background: var(--primary); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        h1, h2 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .content-en { display: none; }
+        .back-link { text-decoration: none; color: var(--primary); font-weight: bold; display: inline-block; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switch">
+            <button class="btn-lang" onclick="toggleLang()">Switch to English</button>
+        </div>
+        <a href="{% url 'index' %}" class="back-link">← Volver / Back</a>
+
+        <div id="es-content" class="content-es">
+            <h1>Política de Privacidad</h1>
+            <p><strong>Última actualización:</strong> 20 de febrero de 2026</p>
+            <p>La presente Política de Privacidad establece los términos en que <strong>Helfy</strong> usa y protege la información que es proporcionada por sus usuarios al momento de utilizar la aplicación móvil.</p>
+            
+            <h2>1. Compromiso de Privacidad</h2>
+            <p>Helfy opera bajo un modelo de "Cero Recopilación de Datos". No solicitamos, recolectamos ni almacenamos datos personales identificables (PII) en servidores externos. Toda la lógica de juego y gestión de tareas ocurre estrictamente de forma local en el dispositivo del usuario.</p>
+
+            <h2>2. Servicios de Terceros y Publicidad</h2>
+            <p>Para mantener la gratuidad del servicio, Helfy utiliza proveedores de publicidad de terceros (como Google AdMob). Estos proveedores pueden utilizar identificadores de publicidad anónimos para ofrecer anuncios basados en sus intereses. Usted puede gestionar estos permisos desde la configuración de privacidad de su sistema operativo (Android/iOS).</p>
+
+            <h2>3. Almacenamiento Local</h2>
+            <p>Sus listas de tareas, progreso de experiencia (XP) y avatares se almacenan en la base de datos interna de su dispositivo. Helfy no posee copias de seguridad de esta información; por lo tanto, la eliminación de la aplicación resultará en la pérdida permanente de dichos datos.</p>
+        </div>
+
+        <div id="en-content" class="content-en">
+            <h1>Privacy Policy</h1>
+            <p><strong>Last Updated:</strong> February 20, 2026</p>
+            <p>This Privacy Policy outlines how <strong>Helfy</strong> uses and protects any information provided by its users while using the mobile application.</p>
+
+            <h2>1. Privacy Commitment</h2>
+            <p>Helfy operates under a "Zero Data Collection" model. We do not request, collect, or store personally identifiable information (PII) on external servers. All task management and gameplay logic occur strictly locally on the user's device.</p>
+
+            <h2>2. Third-Party Services and Advertising</h2>
+            <p>To keep the service free, Helfy uses third-party advertising providers (such as Google AdMob). These providers may use anonymous advertising identifiers to serve interest-based ads. You can manage these permissions within your operating system's privacy settings (Android/iOS).</p>
+
+            <h2>3. Local Storage</h2>
+            <p>Your to-do lists, experience progress (XP), and avatars are stored in your device's internal database. Helfy does not maintain backups of this information; therefore, deleting the app will result in the permanent loss of such data.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleLang() {
+            const es = document.getElementById('es-content');
+            const en = document.getElementById('en-content');
+            const btn = document.querySelector('.btn-lang');
+            if (es.style.display === "none") {
+                es.style.display = "block"; en.style.display = "none";
+                btn.innerText = "Switch to English";
+            } else {
+                es.style.display = "none"; en.style.display = "block";
+                btn.innerText = "Cambiar a Español";
+            }
+        }
+    </script>
+</body>
+</html>
