@@ -1,4 +1,10 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+
+def app_ads_txt(request):
+    with open('mysite/web/app-ads.txt', 'r') as f:
+        content = f.read()
+    return HttpResponse(content, content_type='text/plain')
 
 def index(request):
     """Página de inicio con temática de juego."""
